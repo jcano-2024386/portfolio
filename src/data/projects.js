@@ -26,8 +26,10 @@ export const projects = [
     year: "2026",
     impact: "Digitalización del área de enfermería en Kinal.",
     screenshots: [
-      { label: "Panel médico", tone: "moss", image: "/screenshots/kinalsports-admin.svg" },
-      { label: "Inventario", tone: "cream", image: "/screenshots/signtrack-ia.svg" },
+      { label: "API historiales", tone: "moss", image: "/screenshots/projects/kinalmedic-api-records.jpg" },
+      { label: "Crear registro", tone: "cream", image: "/screenshots/projects/kinalmedic-api-create.jpg" },
+      { label: "Inventario API", tone: "ink", image: "/screenshots/projects/kinalmedic-api-inventory.jpg" },
+      { label: "Estudiantes API", tone: "moss", image: "/screenshots/projects/kinalmedic-api-students.jpg" },
     ],
   },
   {
@@ -50,8 +52,8 @@ export const projects = [
     year: "2026",
     impact: "Práctica Supervisada — banca con arquitectura dual-stack.",
     screenshots: [
-      { label: "Dashboard banco", tone: "ink", image: "/screenshots/banco-dashboard.svg" },
-      { label: "Auth Service", tone: "cream", image: "/screenshots/auth-code.svg" },
+      { label: "Cliente web", tone: "ink", image: "/screenshots/projects/kbank-icon.png" },
+      { label: "Hero bank", tone: "cream", image: "/screenshots/projects/kbank-hero.png" },
     ],
   },
   {
@@ -74,8 +76,8 @@ export const projects = [
     year: "2026",
     impact: "Práctica Supervisada — operación completa de restaurante.",
     screenshots: [
-      { label: "Gestión menú", tone: "amber", image: "/screenshots/react-app.svg" },
-      { label: "Pedidos", tone: "moss", image: "/screenshots/cotiradar-radar.svg" },
+      { label: "App restaurante", tone: "amber", image: "/screenshots/projects/kfood-icon.jpeg" },
+      { label: "Splash", tone: "moss", image: "/screenshots/projects/kfood-splash.png" },
     ],
   },
   {
@@ -98,7 +100,8 @@ export const projects = [
     year: "2026",
     impact: "Propuesta y sistema de clínica escolar.",
     screenshots: [
-      { label: "Dashboard CET", tone: "cream", image: "/screenshots/laboratorio-1.svg" },
+      { label: "Historial clínico", tone: "cream", image: "/screenshots/projects/kinalmedic-api-list.jpg" },
+      { label: "Logo enfermería", tone: "moss", image: "/screenshots/projects/kinalmedic-logo.png" },
     ],
   },
   {
@@ -121,8 +124,8 @@ export const projects = [
     year: "2026",
     impact: "Arquitectura real con auth-service y server-admin.",
     screenshots: [
-      { label: "Panel admin", tone: "ink", image: "/screenshots/kinalsports-admin.svg" },
-      { label: "Reservas", tone: "moss", image: "/screenshots/kinalsports-reservas.svg" },
+      { label: "Logo / UI", tone: "ink", image: "/screenshots/projects/kinalsports-logo.png" },
+      { label: "Panel admin", tone: "moss", image: "/screenshots/kinalsports-admin.svg" },
     ],
   },
   {
