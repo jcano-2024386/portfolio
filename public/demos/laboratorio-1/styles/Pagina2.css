@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body {
+    font-family: Arial, sans-serif;
+    background: #16213e;
+}
+
+.Pagina2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.IslaPaginas {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 8px;
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0,.4);
+}
+
+.paginas {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.indicador {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(138, 99, 210 ,0.3);
+    border: 2px solid #8a63d2;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.botonPag2 {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+
+}
+.botonPag2 img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.botonPag2.active img {
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.botonPag2:hover img {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+
+
+.headerBiografia {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 80px;
+}
+
+.bloqueBiografia {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+ 
+.bloqueBiografia.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+.contenidoBloque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+ 
+.bloqueInvertido .contenidoBloque {
+    direction: rtl;
+}
+ 
+.bloqueInvertido .textoBloque,
+.bloqueInvertido .imagenBloque {
+    direction: ltr;
+}
+ 
+.textoBloque {
+    padding: 20px;
+}
+ 
+.tituloBloque {
+    font-size: 2.2rem;
+    color: var(--rosaNeon);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+ 
+.parrafoBiografia {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+ 
+.imagenBloque {
+    width: 100%;
+    text-align: center;
+}
+ 
+.imagenBloque img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--purpuraElectrico);
+    transition: transform 0.3s ease;
+}
+ 
+.imagenBloque img:hover {
+    transform: scale(1.05);
+}
+ 
+.pieImagen {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--verdeAcido);
+    font-style: italic;
+}
+
+.bloquePasiones {
+    margin-bottom: 80px;
+    padding: 60px 40px;
+    background: rgba(131, 56, 236, 0.05);
+    border-radius: 20px;
+    border: 2px solid var(--purpuraElectrico);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease;
+}
+ 
+.bloquePasiones.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+ 
+.tituloPasiones {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--doradoMetalico);
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+ 
+.gridPasiones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+ 
+.tarjetaPasion {
+    text-align: center;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+ 
+.tarjetaPasion:hover {
+    border-color: var(--verdeAcido);
+    transform: translateY(-10px);
+}
+ 
+.iconoPasion {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+ 
+.nombrePasion {
+    font-size: 1.5rem;
+    color: var(--rosaNeon);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+ 
+.descripcionPasion {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+ 
+.bloqueReflexion {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+ 
+.bloqueReflexion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+.cajaReflexion {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));
+    padding: 50px;
+    border-radius: 20px;
+    border: 2px solid var(--rosaNeon);
+}
+.tituloBiografia {
+    font-size: 3rem;
+    color: var(--verdeAcido);
+    margin-bottom: 30px;
+    font-weight: 800;
+
+}
+
+ .animacionFade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+ 
+.animacionFade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 968px) {
+    .contenidoBloque {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .bloqueInvertido .contenidoBloque {
+        direction: ltr;
+    }
+    .cajaReflexion {
+        grid-template-columns: 1fr;
+    }
+    .tituloBiografia {
+        font-size: 2.5rem;
+    }
+    .tituloBloque {
+        font-size: 1.8rem;
+    }
+}
+ 
+@media (max-width: 640px) {
+    .Pagina2 {
+        padding: 100px 20px 40px;
+    }
+    .contenidoBloque {
+        padding: 25px;
+    }
+    .gridPasiones {
+        grid-template-columns: 1fr;
+    }
+}
