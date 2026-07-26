@@ -5,32 +5,32 @@ export default function About() {
     <section id="sobre-mi" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <div className="grid gap-12 md:grid-cols-2 md:gap-20">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-carbon-400">Sobre mí</p>
-          <h2 className="mt-4 font-display text-3xl font-semibold leading-snug text-carbon-50 md:text-4xl">
+          <p className="text-[10px] uppercase tracking-[0.35em] text-moss-500">Sobre mí</p>
+          <h2 className="mt-4 font-display text-3xl font-semibold leading-snug text-ink-950 md:text-4xl">
             {profile.role}
           </h2>
-          <p className="mt-4 text-sm text-carbon-400">{profile.school}</p>
+          <p className="mt-4 text-sm text-ink-600">{profile.school}</p>
         </div>
         <div className="space-y-6">
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-carbon-400">Descripción</p>
-            <p className="mt-2 text-sm leading-relaxed text-carbon-200 md:text-base">
+            <p className="text-[10px] uppercase tracking-widest text-ink-400">Descripción</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-800 md:text-base">
               {profile.intro}
             </p>
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-carbon-400">Metas</p>
-            <p className="mt-2 text-sm leading-relaxed text-carbon-200">{profile.goals}</p>
+            <p className="text-[10px] uppercase tracking-widest text-ink-400">Metas</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-800">{profile.goals}</p>
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-carbon-400">Aspiraciones</p>
-            <p className="mt-2 text-sm leading-relaxed text-carbon-200">
+            <p className="text-[10px] uppercase tracking-widest text-ink-400">Aspiraciones</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-800">
               {profile.aspirations}
             </p>
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-carbon-400">Capacidades</p>
-            <p className="mt-2 text-sm leading-relaxed text-carbon-200">
+            <p className="text-[10px] uppercase tracking-widest text-ink-400">Capacidades</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-800">
               {profile.capabilities}
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function About() {
             {profile.tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-full border border-carbon-600 px-4 py-1.5 text-xs text-carbon-200"
+                className="border border-ink-200 bg-cream-100 px-3 py-1.5 text-xs text-ink-800"
               >
                 {tool}
               </span>

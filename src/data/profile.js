@@ -1,55 +1,53 @@
 export const profile = {
-  name: "J. Cano",
+  name: "Jeferson Andre Cano Lopez",
+  shortName: "Jeferson Cano",
   handle: "jcano-2024386",
-  email: "jcano-2024386@kinal.edu.gt",
+  email: "jef3rson123@gmail.com",
+  phone: "41439389",
   role: "Desarrollador Full Stack",
-  school: "Centro Educativo Técnico Laboral Kinal",
+  school: "Fundación Kinal",
   location: "Guatemala",
-  age: 19,
+  age: 18,
+  birthYear: 2008,
   yearsDeveloping: 2,
   currentlyStudying: true,
   career: "Perito en Informática — Taller III",
   github: "https://github.com/jcano-2024386",
-  /**
-   * Redes profesionales (rúbrica: LinkedIn + CompuTrabajo).
-   * Reemplaza estas URLs con tu perfil personal cuando lo tengas.
-   */
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/jeferson-andre-cano-lopez-2a4146417/",
   computrabajo: "https://gt.computrabajo.com/postulantes/home",
-  tagline: "Construyo software claro, útil y listo para crecer.",
+  tagline: "Software claro, útil y listo para crecer.",
   welcome:
     "Bienvenido. Aquí encontrarás una muestra de mi trabajo como desarrollador full stack.",
   intro:
-    "Soy desarrollador full stack en formación en Kinal. Trabajo con React, Node.js, C# y APIs REST. Me interesa entregar productos bien estructurados: desde gestores y sistemas bancarios hasta plataformas con autenticación y microservicios.",
+    "Soy estudiante de Fundación Kinal, orientado al desarrollo full stack. Trabajo con React, Node.js, C#/.NET y APIs REST. Me interesa construir sistemas reales: clínicas, banca, restaurantes y plataformas con autenticación y microservicios.",
   goals:
-    "Seguir creciendo en arquitectura de software, buenas prácticas y proyectos que resuelvan problemas reales.",
+    "Seguir creciendo en arquitectura de software, buenas prácticas y productos que resuelvan problemas reales en Guatemala.",
   aspirations:
-    "Integrarme a equipos profesionales de desarrollo, aportar en productos de impacto y consolidar un perfil sólido en full stack y backend.",
+    "Integrarme a equipos profesionales de desarrollo, aportar en proyectos de impacto y consolidar un perfil sólido en full stack y backend.",
   capabilities:
-    "Diseño de APIs REST, autenticación JWT, interfaces React, bases de datos MongoDB/SQL, C#/.NET, Docker y trabajo en metodología Scrum.",
+    "Diseño de APIs REST, autenticación JWT, interfaces React, MongoDB/SQL, C#/.NET, Docker, microservicios y metodología Scrum.",
   stats: [
-    { value: "15+", label: "Repos en GitHub" },
-    { value: "8+", label: "Proyectos destacados" },
+    { value: "10+", label: "Repos en GitHub" },
+    { value: "6+", label: "Proyectos destacados" },
     { value: "2", label: "Años desarrollando" },
     { value: "Kinal", label: "Formación actual" },
   ],
-  /** Porcentajes para gráficas (rúbrica: habilidades visuales) */
   skills: [
-    { name: "React / Vite", level: "Avanzado", percent: 80 },
-    { name: "Node.js / Express", level: "Avanzado", percent: 82 },
-    { name: "C# / .NET", level: "Avanzado", percent: 78 },
-    { name: "JavaScript / TypeScript", level: "Avanzado", percent: 85 },
-    { name: "HTML / CSS / Tailwind", level: "Avanzado", percent: 88 },
-    { name: "MongoDB / SQL", level: "Intermedio", percent: 72 },
-    { name: "Docker / Microservicios", level: "Intermedio", percent: 68 },
-    { name: "JWT / Auth", level: "Avanzado", percent: 80 },
-    { name: "Git / GitHub", level: "Avanzado", percent: 86 },
-    { name: "Scrum / Documentación", level: "Intermedio", percent: 75 },
+    { name: "React / Vite", level: "Avanzado", percent: 82 },
+    { name: "Node.js / Express", level: "Avanzado", percent: 85 },
+    { name: "C# / .NET", level: "Avanzado", percent: 80 },
+    { name: "JavaScript", level: "Avanzado", percent: 88 },
+    { name: "HTML / CSS / Tailwind", level: "Avanzado", percent: 86 },
+    { name: "MongoDB / SQL", level: "Intermedio", percent: 78 },
+    { name: "Docker / Microservicios", level: "Intermedio", percent: 72 },
+    { name: "JWT / Auth", level: "Avanzado", percent: 84 },
+    { name: "Git / GitHub", level: "Avanzado", percent: 88 },
+    { name: "Scrum", level: "Intermedio", percent: 80 },
   ],
   education: [
     {
       title: "Perito en Informática",
-      place: "Centro Educativo Técnico Laboral Kinal",
+      place: "Fundación Kinal — Centro Educativo Técnico Laboral",
       period: "2024 — Presente",
       detail:
         "Formación en desarrollo web, bases de datos, APIs, React, Node.js, C#/.NET y metodologías ágiles (Scrum). Taller III — portafolio de desarrollador.",
@@ -57,26 +55,19 @@ export const profile = {
   ],
   experience: [
     {
-      title: "Proyectos académicos full stack",
+      title: "Scrum Master — Práctica Supervisada",
+      place: "Kinal · K-Bank, K-Food, CET / KinalMedic",
+      period: "2025 — 2026",
+      detail:
+        "Coordinación de sprints, backend, modelado de datos y APIs en sistemas bancarios, de restaurante y de clínica escolar. Enfoque en JWT, MongoDB y microservicios .NET.",
+    },
+    {
+      title: "Proyectos full stack académicos",
       place: "Kinal — Taller / PMA",
       period: "2025 — 2026",
       detail:
-        "Desarrollo de Kinalsports, COPEREX API, AuthService (.NET), sistema bancario, K-BANK, Restaurante K-FOOD y gestor de opiniones. Enfoque en APIs REST, JWT y frontends React.",
-    },
-    {
-      title: "Hack@LATAM — CotiRadar",
-      place: "Hackathon",
-      period: "2025",
-      detail:
-        "Participación en plataforma de inteligencia pública para detectar sobreprecio en compras gubernamentales, con IA y demo desplegada.",
-    },
-    {
-      title: "SignTrack (colaboración)",
-      place: "Proyecto inclusivo — lenguaje de señas",
-      period: "2026",
-      detail:
-        "Colaboración en app tipo Teams inclusiva con microservicios C#, React, Docker y reconocimiento de señas (MediaPipe).",
+        "Desarrollo de Kinalsports, COPEREX API, AuthService, SignTrack y gestor de opiniones. APIs REST, paneles React y arquitectura por servicios.",
     },
   ],
-  tools: ["Cursor", "Docker", "Git", "Render", "Vercel", "Postman", "VS Code"],
+  tools: ["Cursor", "Docker", "Git", "Postman", "VS Code", "Notion", "Vercel"],
 }

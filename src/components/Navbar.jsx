@@ -3,10 +3,10 @@ import { Menu, X } from "lucide-react"
 import { profile } from "../data/profile"
 
 const links = [
-  { href: "#inicio", label: "Bienvenida" },
+  { href: "#inicio", label: "Inicio" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#datos", label: "Datos" },
-  { href: "#skills", label: "Habilidades" },
+  { href: "#skills", label: "Skills" },
   { href: "#experiencia", label: "CV" },
   { href: "#galeria", label: "Galería" },
   { href: "#proyectos", label: "Proyectos" },
@@ -27,13 +27,13 @@ export default function Navbar() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-carbon-600/50 bg-carbon-950/90 backdrop-blur-md"
+          ? "border-b border-cream-200/20 bg-ink-950/95 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
-        <a href="#inicio" className="font-display text-lg font-bold tracking-tight text-carbon-50">
-          jc<span className="text-carbon-400">.</span>cano
+        <a href="#inicio" className="font-display text-lg font-bold tracking-tight text-cream-50">
+          jc<span className="text-moss-400">.</span>cano
         </a>
 
         <ul className="hidden items-center gap-4 lg:flex xl:gap-5">
@@ -41,7 +41,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[10px] uppercase tracking-widest text-carbon-200 transition hover:text-carbon-50"
+                className="text-[10px] uppercase tracking-widest text-cream-200/80 transition hover:text-cream-50"
               >
                 {link.label}
               </a>
@@ -52,7 +52,7 @@ export default function Navbar() {
               href={profile.github}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-carbon-600 bg-carbon-50 px-4 py-2 text-[10px] font-medium uppercase tracking-wider text-carbon-950 transition hover:bg-white"
+              className="border border-cream-200/30 bg-cream-50 px-4 py-2 text-[10px] font-medium uppercase tracking-wider text-ink-950 transition hover:bg-cream-100"
             >
               GitHub
             </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="text-carbon-50 lg:hidden"
+          className="text-cream-50 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Menú"
         >
@@ -70,37 +70,19 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-carbon-600/50 bg-carbon-900 px-6 py-6 lg:hidden">
+        <div className="border-t border-cream-200/15 bg-ink-900 px-6 py-6 lg:hidden">
           <ul className="flex flex-col gap-3">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm uppercase tracking-widest text-carbon-200"
+                  className="text-sm uppercase tracking-widest text-cream-100"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li className="flex flex-wrap gap-3 pt-2">
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-carbon-600 px-4 py-2 text-xs uppercase tracking-wider"
-              >
-                GitHub
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-carbon-600 px-4 py-2 text-xs uppercase tracking-wider"
-              >
-                LinkedIn
-              </a>
-            </li>
           </ul>
         </div>
       )}
