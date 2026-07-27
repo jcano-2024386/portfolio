@@ -5,14 +5,14 @@ import About from "./components/About"
 import GeneralData from "./components/GeneralData"
 import Skills from "./components/Skills"
 import Experience from "./components/Experience"
-import Gallery from "./components/Gallery"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
 /**
  * Estructura alineada a la rúbrica Kinal — Portafolio de desarrollador (Taller III):
- * 1. Bienvenida · 2a Sobre mí · 2b Datos · 2c Habilidades · 2d CV · 2e Galería · 2f Proyectos · 3 Redes
+ * 1. Bienvenida · 2a Sobre mí · 2b Datos · 2c Habilidades · 2d CV · 2f Proyectos · 3 Redes
+ * Capturas solo dentro de cada proyecto.
  */
 export default function App() {
   return (
@@ -25,7 +25,6 @@ export default function App() {
         <GeneralData />
         <Skills />
         <Experience />
-        <Gallery />
         <Projects />
         <Contact />
       </main>

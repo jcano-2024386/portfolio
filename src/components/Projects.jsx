@@ -120,14 +120,26 @@ export default function Projects() {
                   </p>
                 </div>
 
-                {active.screenshots?.[0]?.image && (
-                  <div className="overflow-hidden border border-cream-200/15 bg-ink-950">
-                    <img
-                      src={asset(active.screenshots[0].image)}
-                      alt={active.name}
-                      className="aspect-[16/9] w-full object-cover object-top opacity-90"
-                      loading="lazy"
-                    />
+                {active.screenshots?.length > 0 && (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {active.screenshots.map((shot) =>
+                      shot.image ? (
+                        <div
+                          key={shot.label}
+                          className="overflow-hidden border border-cream-200/15 bg-ink-950"
+                        >
+                          <img
+                            src={asset(shot.image)}
+                            alt={`${active.name} — ${shot.label}`}
+                            className="aspect-[16/10] w-full object-cover object-top opacity-90"
+                            loading="lazy"
+                          />
+                          <p className="border-t border-cream-200/10 px-3 py-2 text-[10px] uppercase tracking-widest text-cream-300/70">
+                            {shot.label}
+                          </p>
+                        </div>
+                      ) : null,
+                    )}
                   </div>
                 )}
 
@@ -159,42 +171,37 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-auto grid grid-cols-2 gap-px border border-cream-200/20 bg-cream-200/20 sm:grid-cols-4">
+                <div className="mt-auto grid grid-cols-2 gap-px border border-cream-200/20 bg-cream-200/20">
                   {active.github && (
                     <a
                       href={active.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="col-span-2 flex items-center justify-center gap-2 bg-moss-400 px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-ink-950 transition hover:bg-moss-500 sm:col-span-2"
+                      className="flex items-center justify-center gap-2 bg-moss-400 px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-ink-950 transition hover:bg-moss-500"
                     >
                       <ExternalLink size={12} />
                       Repositorio
                     </a>
                   )}
-                  {active.demo && (
+                  {active.demo ? (
                     <a
                       href={
                         active.demo.startsWith("http") ? active.demo : asset(active.demo)
                       }
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center justify-center bg-ink-950 px-3 py-3 text-[10px] uppercase tracking-wider text-cream-50 transition hover:bg-ink-800 sm:col-span-1"
+                      className="flex items-center justify-center bg-ink-950 px-3 py-3 text-[10px] uppercase tracking-wider text-cream-50 transition hover:bg-ink-800"
                     >
                       Demo
                     </a>
+                  ) : (
+                    <a
+                      href="#contacto"
+                      className="flex items-center justify-center bg-ink-950 px-3 py-3 text-[10px] uppercase tracking-wider text-cream-50 transition hover:bg-ink-800"
+                    >
+                      Contacto
+                    </a>
                   )}
-                  <a
-                    href="#galeria"
-                    className="flex items-center justify-center bg-ink-950 px-3 py-3 text-[10px] uppercase tracking-wider text-cream-50 transition hover:bg-ink-800 sm:col-span-1"
-                  >
-                    Capturas
-                  </a>
-                  <a
-                    href="#contacto"
-                    className="flex items-center justify-center bg-ink-950 px-3 py-3 text-[10px] uppercase tracking-wider text-cream-50 transition hover:bg-ink-800 sm:col-span-1"
-                  >
-                    Contacto
-                  </a>
                 </div>
               </div>
             </div>
