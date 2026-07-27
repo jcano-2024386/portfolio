@@ -19,7 +19,7 @@ export const profile = {
   welcome:
     "Bienvenido. Aquí encontrarás una muestra de mi trabajo como desarrollador full stack.",
   intro:
-    "Soy estudiante de Fundación Kinal, orientado al desarrollo full stack. Trabajo con React, Node.js, C#/.NET y APIs REST. Me interesa construir sistemas reales: clínicas, banca, restaurantes y plataformas con autenticación y microservicios.",
+    "Soy estudiante de Fundación Kinal, orientado al desarrollo full stack. Trabajo con React, Node.js, C#/.NET y APIs REST. Me enfoco en tres sistemas principales: KinalMedic, Banco King y el sistema de restaurante.",
   goals:
     "Seguir creciendo en arquitectura de software, buenas prácticas y productos que resuelvan problemas reales en Guatemala.",
   aspirations:
@@ -27,8 +27,8 @@ export const profile = {
   capabilities:
     "Diseño de APIs REST, autenticación JWT, interfaces React, MongoDB/SQL, C#/.NET, Docker, microservicios y metodología Scrum.",
   stats: [
-    { value: "10+", label: "Repos en GitHub" },
-    { value: "6+", label: "Proyectos destacados" },
+    { value: "3", label: "Proyectos principales" },
+    { value: "Full stack", label: "Enfoque" },
     { value: "2", label: "Años desarrollando" },
     { value: "Kinal", label: "Formación actual" },
   ],
@@ -56,17 +56,10 @@ export const profile = {
   experience: [
     {
       title: "Scrum Master — Práctica Supervisada",
-      place: "Kinal · K-Bank, K-Food, CET / KinalMedic",
+      place: "Kinal · KinalMedic, Banco King, Sistema de Restaurante",
       period: "2025 — 2026",
       detail:
-        "Coordinación de sprints, backend, modelado de datos y APIs en sistemas bancarios, de restaurante y de clínica escolar. Enfoque en JWT, MongoDB y microservicios .NET.",
-    },
-    {
-      title: "Proyectos full stack académicos",
-      place: "Kinal — Taller / PMA",
-      period: "2025 — 2026",
-      detail:
-        "Desarrollo de Kinalsports, COPEREX API, AuthService, SignTrack y gestor de opiniones. APIs REST, paneles React y arquitectura por servicios.",
+        "Coordinación de sprints, backend, modelado de datos y APIs en enfermería institucional, banca digital y gestión de restaurantes. Enfoque en JWT, MongoDB y microservicios .NET.",
     },
   ],
   tools: ["Cursor", "Docker", "Git", "Postman", "VS Code", "Notion", "Vercel"],

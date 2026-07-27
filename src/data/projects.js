@@ -1,8 +1,6 @@
 export const categories = [
   { id: "all", label: "Todos" },
   { id: "featured", label: "Destacados" },
-  { id: "backend", label: "Backend" },
-  { id: "frontend", label: "Frontend" },
 ]
 
 export const projects = [
@@ -33,7 +31,7 @@ export const projects = [
   },
   {
     id: "k-bank",
-    name: "Banco King (K-BANK)",
+    name: "Banco King",
     category: "featured",
     featured: true,
     hasUi: true,
@@ -56,13 +54,13 @@ export const projects = [
     ],
   },
   {
-    id: "k-food",
-    name: "Restaurante K-FOOD",
+    id: "restaurante",
+    name: "Sistema de Restaurante",
     category: "featured",
     featured: true,
     hasUi: true,
     description:
-      "Sistema de gestión de restaurantes: sucursales, mesas, menús, pedidos, reservaciones y eventos. API Node.js + Auth Service .NET con roles ADMIN, GERENTE, MESERO y CLIENTE.",
+      "Sistema de gestión de restaurantes (Heaven Flavor): sucursales, mesas, menús, pedidos, reservaciones y eventos. API Node.js + Auth Service .NET con roles ADMIN, GERENTE, MESERO y CLIENTE.",
     learned: [
       "CRUD de dominio gastronómico",
       "Flujos de estado en pedidos y reservaciones",
@@ -75,161 +73,8 @@ export const projects = [
     year: "2026",
     impact: "Práctica Supervisada — operación completa de restaurante.",
     screenshots: [
-      { label: "Heaven Flavor UI", tone: "amber", image: "/screenshots/projects/kfood-logo.jpeg" },
+      { label: "Heaven Flavor", tone: "amber", image: "/screenshots/projects/kfood-logo.jpeg" },
       { label: "App icon", tone: "moss", image: "/screenshots/projects/kfood-icon.jpeg" },
-    ],
-  },
-  {
-    id: "cet",
-    name: "CET — Clínica Escolar",
-    category: "featured",
-    featured: true,
-    hasUi: true,
-    description:
-      "Clínica Estudiantil Técnica: pacientes, historial médico, inventario de medicamentos, consultas con descuento de stock y dashboard en tiempo real. Full stack React + Node.",
-    learned: [
-      "Monolito por capas frontend/backend",
-      "Inventario con alertas de vencimiento",
-      "Dashboard con estadísticas",
-      "Docker Compose para despliegue",
-    ],
-    stack: ["React", "Node.js", "MongoDB", "Docker"],
-    github: "https://github.com/jcano-2024386/CET-Propuesta",
-    demo: null,
-    year: "2026",
-    impact: "Propuesta y sistema de clínica escolar.",
-    screenshots: [
-      { label: "API registros médicos", tone: "cream", image: "/screenshots/projects/kinalmedic-api-create.jpg" },
-      { label: "Consulta historial", tone: "moss", image: "/screenshots/projects/kinalmedic-api-list.jpg" },
-    ],
-  },
-  {
-    id: "kinalsports",
-    name: "Kinalsports",
-    category: "featured",
-    featured: true,
-    hasUi: true,
-    description:
-      "Plataforma de gestión deportiva: reservas de campos, torneos, equipos y panel administrativo. Monorepo con autenticación, API admin y cliente React.",
-    learned: [
-      "Arquitectura monorepo",
-      "JWT entre servicios",
-      "React 19 + Vite + Tailwind",
-      "Upload con Cloudinary",
-    ],
-    stack: ["React 19", "Node.js", "MongoDB", "JWT", "Cloudinary"],
-    github: "https://github.com/jcano-2024386/Kinalsports",
-    demo: null,
-    year: "2026",
-    impact: "Arquitectura real con auth-service y server-admin.",
-    screenshots: [
-      { label: "Marca / panel", tone: "ink", image: "/screenshots/projects/kinalsports-logo.png" },
-      { label: "Reservas UI", tone: "moss", image: "/screenshots/kinalsports-reservas.svg" },
-    ],
-  },
-  {
-    id: "coperex",
-    name: "COPEREX API",
-    category: "backend",
-    featured: true,
-    hasUi: false,
-    description:
-      "API REST para la feria Interfer: registro de empresas, filtros, reportes Excel y administración con JWT, rate limiting y validación.",
-    learned: [
-      "API REST versionada",
-      "Seguridad JWT, bcrypt, helmet",
-      "Reportes Excel",
-      "Documentación Postman",
-    ],
-    stack: ["Node.js", "Express", "MongoDB", "JWT", "ExcelJS"],
-    github: "https://github.com/jcano-2024386/COPEREX-API",
-    demo: null,
-    year: "2026",
-    impact: "API segura lista para uso académico.",
-    screenshots: [
-      { label: "Código / API", tone: "moss", image: "/screenshots/coperex-code.svg" },
-    ],
-  },
-  {
-    id: "signtrack",
-    name: "SignTrack",
-    category: "featured",
-    featured: true,
-    hasUi: true,
-    description:
-      "Aplicación inclusiva tipo Teams con reconocimiento de lenguaje de señas. Microservicios C#, React, MediaPipe y Docker.",
-    learned: [
-      "Microservicios .NET",
-      "Integración MediaPipe / IA",
-      "Contratos JWT entre servicios",
-      "Frontend React para videollamada",
-    ],
-    stack: ["C#", "React", "MediaPipe", "Docker", "PostgreSQL"],
-    github: "https://github.com/jcano-2024386/SignTrack",
-    demo: null,
-    year: "2026",
-    impact: "Accesibilidad e inclusión.",
-    screenshots: [
-      { label: "Chat", tone: "ink", image: "/screenshots/signtrack-chat.svg" },
-      { label: "Reconocimiento", tone: "cream", image: "/screenshots/signtrack-ia.svg" },
-    ],
-  },
-  {
-    id: "auth-service",
-    name: "AuthService",
-    category: "backend",
-    featured: false,
-    hasUi: false,
-    description:
-      "Servicio de autenticación con Clean Architecture en .NET: capas Api, Application, Domain y Persistence.",
-    learned: [
-      "Clean Architecture en C#",
-      "Separación Domain / Application / Persistence",
-      "JWT y capas de aplicación",
-    ],
-    stack: ["C#", ".NET", "Clean Architecture", "JWT"],
-    github: "https://github.com/jcano-2024386/AuthService",
-    demo: null,
-    year: "2026",
-    impact: "Patrones enterprise en C#.",
-    screenshots: [
-      { label: "Código", tone: "ink", image: "/screenshots/auth-code.svg" },
-    ],
-  },
-  {
-    id: "gestor-opiniones",
-    name: "Gestor de Opiniones",
-    category: "backend",
-    featured: false,
-    hasUi: false,
-    description:
-      "Gestor de opiniones en C#: administrar y organizar feedback de usuarios.",
-    learned: ["Backend con C#", "CRUD y lógica de negocio", "Organización de servicios"],
-    stack: ["C#", ".NET"],
-    github: "https://github.com/jcano-2024386/gestor-opiniones",
-    demo: null,
-    year: "2026",
-    impact: "Gestión de opiniones académicas.",
-    screenshots: [
-      { label: "Código", tone: "cream", image: "/screenshots/auth-code.svg" },
-    ],
-  },
-  {
-    id: "react-app",
-    name: "React App",
-    category: "frontend",
-    featured: false,
-    hasUi: true,
-    description:
-      "Aplicación React de práctica con Vite. Exploración de componentes y estructura SPA.",
-    learned: ["Componentes React", "Vite como bundler", "Estructura SPA"],
-    stack: ["React", "Vite"],
-    github: "https://github.com/jcano-2024386/React-app",
-    demo: null,
-    year: "2026",
-    impact: "Base de interfaces SPA.",
-    screenshots: [
-      { label: "SPA React", tone: "moss", image: "/screenshots/react-app.svg" },
     ],
   },
 ]
