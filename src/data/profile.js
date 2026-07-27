@@ -19,7 +19,7 @@ export const profile = {
   welcome:
     "Bienvenido. Aquí encontrarás una muestra de mi trabajo como desarrollador full stack.",
   intro:
-    "Soy estudiante de Fundación Kinal, orientado al desarrollo full stack. Trabajo con React, Node.js, C#/.NET y APIs REST. Me enfoco en tres sistemas principales: KinalMedic, Banco King y el sistema de restaurante.",
+    "Soy estudiante de Fundación Kinal, orientado al desarrollo full stack. Trabajo con React, Node.js, C#/.NET y APIs REST. Mis proyectos principales son KinalMedic, Banco King y el sistema de restaurante; también he trabajado en Kinalsports, COPEREX API y SignTrack.",
   goals:
     "Seguir creciendo en arquitectura de software, buenas prácticas y productos que resuelvan problemas reales en Guatemala.",
   aspirations:
@@ -27,8 +27,8 @@ export const profile = {
   capabilities:
     "Diseño de APIs REST, autenticación JWT, interfaces React, MongoDB/SQL, C#/.NET, Docker, microservicios y metodología Scrum.",
   stats: [
+    { value: "6", label: "Proyectos en portafolio" },
     { value: "3", label: "Proyectos principales" },
-    { value: "Full stack", label: "Enfoque" },
     { value: "2", label: "Años desarrollando" },
     { value: "Kinal", label: "Formación actual" },
   ],
@@ -60,6 +60,13 @@ export const profile = {
       period: "2025 — 2026",
       detail:
         "Coordinación de sprints, backend, modelado de datos y APIs en enfermería institucional, banca digital y gestión de restaurantes. Enfoque en JWT, MongoDB y microservicios .NET.",
+    },
+    {
+      title: "Proyectos full stack y backend",
+      place: "Kinal — Taller / PMA",
+      period: "2025 — 2026",
+      detail:
+        "Desarrollo de Kinalsports, COPEREX API y SignTrack. APIs REST, paneles React y microservicios.",
     },
   ],
   tools: ["Cursor", "Docker", "Git", "Postman", "VS Code", "Notion", "Vercel"],
