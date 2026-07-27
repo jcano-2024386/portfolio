@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react"
-import { ExternalLink, FolderGit2, Github, Radio, Server } from "lucide-react"
+import { ExternalLink, FolderGit2, Radio, Server } from "lucide-react"
 import { projects, categories } from "../data/projects"
 import { asset } from "../lib/asset"
 import Reveal from "./Reveal"
+import GitHubIcon from "./GitHubIcon"
 
 const STATUS = {
   deployed: { label: "LIVE", className: "text-moss-400 border-moss-400/40 bg-moss-400/10" },
@@ -389,7 +390,7 @@ export default function Projects() {
                       rel="noreferrer"
                       className="flex items-center justify-center gap-2 bg-moss-400 px-3 py-4 text-[11px] font-medium uppercase tracking-wider text-ink-950 transition hover:bg-moss-500"
                     >
-                      <Github size={14} />
+                      <GitHubIcon size={14} />
                       Repositorio
                       <ExternalLink size={12} />
                     </a>
