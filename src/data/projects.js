@@ -31,8 +31,9 @@ export const projects = [
     impact: "Digitalización del área de enfermería en Kinal.",
     screenshots: [
       { label: "Panel principal", tone: "moss", image: "/screenshots/projects/kinalmedic-ui.jpg" },
-      { label: "Branding enfermería", tone: "cream", image: "/screenshots/projects/kinalmedic-enfermeria.png" },
-      { label: "API historiales", tone: "ink", image: "/screenshots/projects/kinalmedic-api-records.jpg" },
+      { label: "API Swagger", tone: "ink", image: "/screenshots/projects/kinalmedic-api-swagger.jpg" },
+      { label: "API historiales", tone: "cream", image: "/screenshots/projects/kinalmedic-api-records.jpg" },
+      { label: "Branding enfermería", tone: "moss", image: "/screenshots/projects/kinalmedic-enfermeria.png" },
     ],
   },
   {
@@ -104,7 +105,6 @@ export const projects = [
     impact: "Arquitectura real con auth-service y server-admin.",
     screenshots: [
       { label: "Marca / panel", tone: "ink", image: "/screenshots/projects/kinalsports-logo.png" },
-      { label: "Reservas UI", tone: "moss", image: "/screenshots/kinalsports-reservas.svg" },
     ],
   },
   {

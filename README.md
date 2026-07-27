@@ -2,7 +2,7 @@
 
 Portafolio de desarrollador (Taller III · Fundación Kinal) — React + Vite + Tailwind.
 
-Cumple la rúbrica: Bienvenida, Sobre mí, Datos, Habilidades, CV, Proyectos (con capturas) y redes (GitHub, LinkedIn).
+Cumple la rúbrica: Bienvenida, Sobre mí, Datos, Habilidades, CV, Galería, Proyectos y redes (GitHub, LinkedIn).
 
 ## Local
 
