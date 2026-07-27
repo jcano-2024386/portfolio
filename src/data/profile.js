@@ -14,7 +14,6 @@ export const profile = {
   career: "Perito en Informática — Taller III",
   github: "https://github.com/jcano-2024386",
   linkedin: "https://www.linkedin.com/in/jeferson-andre-cano-lopez-2a4146417/",
-  computrabajo: "https://gt.computrabajo.com/postulantes/home",
   tagline: "Software claro, útil y listo para crecer.",
   welcome:
     "Bienvenido. Aquí encontrarás una muestra de mi trabajo como desarrollador full stack.",

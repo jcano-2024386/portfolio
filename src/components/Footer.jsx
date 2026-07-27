@@ -14,14 +14,6 @@ export default function Footer() {
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-cream-50">
             LinkedIn
           </a>
-          <a
-            href={profile.computrabajo}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-cream-50"
-          >
-            CompuTrabajo
-          </a>
         </div>
       </div>
     </footer>

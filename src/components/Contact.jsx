@@ -14,7 +14,7 @@ export default function Contact() {
             Conectemos.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-center text-sm text-ink-600">
-            Correo, teléfono y perfiles en GitHub, LinkedIn y CompuTrabajo.
+            Correo, teléfono y perfiles en GitHub y LinkedIn.
           </p>
 
           <div className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-2">
@@ -49,15 +49,6 @@ export default function Contact() {
             >
               <ExternalLink size={16} />
               LinkedIn
-            </a>
-            <a
-              href={profile.computrabajo}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 border border-ink-300 px-6 py-3.5 text-xs uppercase tracking-wider text-ink-950 transition hover:border-moss-500 sm:col-span-2"
-            >
-              <ExternalLink size={16} />
-              CompuTrabajo
             </a>
           </div>
         </div>
