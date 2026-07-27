@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ExternalLink, FolderGit2, Github, Radio, Server } from "lucide-react"
 import { projects, categories } from "../data/projects"
 import { asset } from "../lib/asset"
+import Reveal from "./Reveal"
 
 const STATUS = {
   deployed: { label: "LIVE", className: "text-moss-400 border-moss-400/40 bg-moss-400/10" },
   api: { label: "API", className: "text-signal border-signal/40 bg-signal/10" },
   prototype: { label: "PROTO", className: "text-cream-200 border-cream-200/30 bg-cream-50/5" },
 }
+
+const EXIT_MS = 260
 
 export default function Projects() {
   const [filter, setFilter] = useState("featured")
@@ -20,27 +23,43 @@ export default function Projects() {
 
   const [activeId, setActiveId] = useState(filtered[0]?.id ?? projects[0]?.id)
   const [panelKey, setPanelKey] = useState(0)
+  const [phase, setPhase] = useState("enter") // enter | exit
+  const [listKey, setListKey] = useState(0)
+  const pendingId = useRef(null)
+  const exitTimer = useRef(null)
   const active = projects.find((p) => p.id === activeId) ?? filtered[0]
   const activeIndex = filtered.findIndex((p) => p.id === active?.id)
 
+  const swapTo = (id) => {
+    if (!id || id === activeId) return
+    if (exitTimer.current) clearTimeout(exitTimer.current)
+    pendingId.current = id
+    setPhase("exit")
+    exitTimer.current = setTimeout(() => {
+      setActiveId(pendingId.current)
+      setPanelKey((k) => k + 1)
+      setPhase("enter")
+      pendingId.current = null
+    }, EXIT_MS)
+  }
+
   const selectFilter = (id) => {
     setFilter(id)
+    setListKey((k) => k + 1)
     const next =
       id === "all"
         ? projects
         : id === "featured"
           ? projects.filter((p) => p.featured)
           : projects.filter((p) => p.category === id)
-    if (next[0]) {
-      setActiveId(next[0].id)
-      setPanelKey((k) => k + 1)
-    }
+    if (next[0]) swapTo(next[0].id)
   }
 
-  const selectProject = (id) => {
-    setActiveId(id)
-    setPanelKey((k) => k + 1)
-  }
+  useEffect(() => {
+    return () => {
+      if (exitTimer.current) clearTimeout(exitTimer.current)
+    }
+  }, [])
 
   useEffect(() => {
     const onKey = (e) => {
@@ -51,18 +70,12 @@ export default function Projects() {
       if (e.key === "ArrowDown" || e.key === "j") {
         e.preventDefault()
         const next = filtered[Math.min(idx + 1, filtered.length - 1)]
-        if (next) {
-          setActiveId(next.id)
-          setPanelKey((k) => k + 1)
-        }
+        if (next) swapTo(next.id)
       }
       if (e.key === "ArrowUp" || e.key === "k") {
         e.preventDefault()
         const prev = filtered[Math.max(idx - 1, 0)]
-        if (prev) {
-          setActiveId(prev.id)
-          setPanelKey((k) => k + 1)
-        }
+        if (prev) swapTo(prev.id)
       }
     }
     window.addEventListener("keydown", onKey)
@@ -70,12 +83,14 @@ export default function Projects() {
   }, [filtered, activeId])
 
   const statusMeta = STATUS[active?.status] ?? STATUS.prototype
+  const panelClass =
+    phase === "exit" ? "project-panel-exit" : "project-panel-enter"
 
   return (
     <section id="proyectos" className="ink-panel relative py-20 text-cream-50 md:py-28">
       <div className="scanlines pointer-events-none absolute inset-0 opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 md:px-6">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-cream-200/15 pb-6">
+        <Reveal variant="up" className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-cream-200/15 pb-6">
           <div>
             <p className="text-[10px] uppercase tracking-[0.35em] text-moss-400">
               [A] project archive · terminal · {projects.length} deploys
@@ -95,7 +110,7 @@ export default function Projects() {
                 onClick={() => selectFilter(cat.id)}
                 className={`border px-3.5 py-2 text-[10px] uppercase tracking-wider transition duration-300 ${
                   filter === cat.id
-                    ? "border-moss-400 bg-moss-400 text-ink-950 shadow-[0_0_20px_rgba(107,125,82,0.35)]"
+                    ? "filter-chip-active border-moss-400 bg-moss-400 text-ink-950 shadow-[0_0_20px_rgba(107,125,82,0.35)]"
                     : "border-cream-200/25 text-cream-200 hover:border-moss-400/50 hover:text-cream-50"
                 }`}
               >
@@ -103,8 +118,9 @@ export default function Projects() {
               </button>
             ))}
           </div>
-        </div>
+        </Reveal>
 
+        <Reveal variant="scale" delay={80} className="soft-glow">
         <div className="terminal-frame animate-pulse-border grid min-h-[42rem] overflow-hidden border border-cream-200/20 bg-ink-900/85 lg:min-h-[48rem] lg:grid-cols-[minmax(280px,0.95fr)_minmax(0,1.55fr)]">
           {/* Mailbox */}
           <div className="flex flex-col border-b border-cream-200/15 lg:border-b-0 lg:border-r">
@@ -118,16 +134,20 @@ export default function Projects() {
               </div>
             </div>
 
-            <ul className="flex-1 overflow-y-auto">
+            <ul className="flex-1 overflow-y-auto" key={listKey}>
               {filtered.map((project, i) => {
                 const selected = project.id === active?.id
                 const st = STATUS[project.status] ?? STATUS.prototype
                 return (
-                  <li key={project.id}>
+                  <li
+                    key={project.id}
+                    className="mailbox-row-enter"
+                    style={{ animationDelay: `${i * 55}ms` }}
+                  >
                     <button
                       type="button"
-                      onClick={() => selectProject(project.id)}
-                      className={`group flex w-full flex-col gap-2 border-b border-cream-200/10 px-4 py-5 text-left transition duration-300 ${
+                      onClick={() => swapTo(project.id)}
+                      className={`group flex w-full flex-col gap-2 border-b border-cream-200/10 px-4 py-5 text-left transition-all duration-300 ${
                         selected
                           ? "bg-cream-50 text-ink-950"
                           : "text-cream-100 hover:bg-cream-50/[0.06] hover:pl-5"
@@ -209,20 +229,23 @@ export default function Projects() {
 
           {/* Detail */}
           {active && (
-            <div className="flex min-h-0 flex-col" key={panelKey}>
+            <div className="flex min-h-0 flex-col overflow-hidden">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-cream-200/15 px-5 py-3.5">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-cream-300/80">
                   [B] message · deploy detail
                 </p>
                 <span
-                  className={`inline-flex items-center gap-1.5 border px-2 py-1 text-[9px] uppercase tracking-wider ${statusMeta.className}`}
+                  className={`inline-flex items-center gap-1.5 border px-2 py-1 text-[9px] uppercase tracking-wider transition-all duration-300 ${statusMeta.className}`}
                 >
                   <Radio size={10} className="project-status-dot-inline" />
                   {statusMeta.label}
                 </span>
               </div>
 
-              <div className="project-panel-enter flex flex-1 flex-col gap-6 overflow-y-auto p-5 md:p-8">
+              <div
+                key={panelKey}
+                className={`${panelClass} flex flex-1 flex-col gap-6 overflow-y-auto p-5 md:p-8`}
+              >
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.25em] text-moss-400">
                     {active.featured ? "DESTACADO" : active.category} · {active.year} ·{" "}
@@ -395,6 +418,7 @@ export default function Projects() {
             </div>
           )}
         </div>
+        </Reveal>
       </div>
     </section>
   )
